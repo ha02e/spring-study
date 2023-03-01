@@ -5,7 +5,7 @@
 
 	<!-- Controller  -->
 	<bean id="indexController" class="com.hy.controller.IndexController"></bean>
-
+	<bean id="memberController" class="com.hy.controller.MemberController"></bean>
 
 	<!-- ViewResolver -->
 	<bean id="viewResolver" class="org.springframework.web.servlet.view.InternalResourceViewResolver">
