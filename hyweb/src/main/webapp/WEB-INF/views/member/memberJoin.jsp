@@ -22,6 +22,11 @@ table{
 	margin:40px auto;
 }
 </style>
+<script>
+function idCheck(){
+	window.open('idCheckForm.hy','idCheck','width=500px,height=300px');
+}
+</script>
 </head>
 <body>
 <div class="topmenu">

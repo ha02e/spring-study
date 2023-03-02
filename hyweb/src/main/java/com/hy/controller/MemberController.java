@@ -4,6 +4,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.servlet.ModelAndView;
 
 import com.hy.member.model.MemberDAO;
@@ -36,6 +37,33 @@ public class MemberController {
 		mav.addObject("str",str);
 		mav.addObject("goPage","/hyweb/index.hy");
 		mav.setViewName("member/memberPopup");
+		
+		return mav;
+		
+	}
+	
+	@RequestMapping("idCheckForm.hy")
+	public String idCheckForm() {
+		return "member/idCheck";
+	}
+	
+	@RequestMapping(value="idCheck.hy",method=RequestMethod.POST)
+	public ModelAndView idCheck(MemberDTO dto) {
+		
+		boolean result=memberDao.idCheck(dto.getId());
+		
+		ModelAndView mav=new ModelAndView();
+		
+		String str="";
+		if(result) {
+			mav.addObject("str", dto.getId()+"는 중복된 아이디입니다.");
+			mav.addObject("goPage", "idCheckForm.hy");
+			mav.setViewName("member/memberPopup");
+		}else {
+			mav.addObject("userid", dto.getId());
+			mav.addObject("str", dto.getId()+"는 사용 가능합니다.");
+			mav.setViewName("member/idCheckOk");
+		}
 		
 		return mav;
 		
