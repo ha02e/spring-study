@@ -31,7 +31,7 @@ input[type="submit"]{
 </head>
 <body>
 <h1>로 그 인</h1>
-<form name="login">
+<form name="login" action="login.hy" method="post">
 <table>
 	<tr>
 		<th><label>아이디</label></th>

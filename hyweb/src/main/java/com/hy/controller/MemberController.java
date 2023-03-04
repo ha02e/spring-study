@@ -80,4 +80,33 @@ public class MemberController {
 		return "member/login";
 	}
 	
+	@RequestMapping(value="login.hy",method = RequestMethod.POST)
+	public ModelAndView loginCheck(@RequestParam("userid")String userid,
+									@RequestParam("userpwd")String userpwd) {
+		
+		int result=memberDao.loginCheck(userid, userpwd);
+		
+		ModelAndView mav=new ModelAndView();
+		
+		String str="";
+		if(result==memberDao.Login_ok) {
+			
+			String username=memberDao.getUserInfo(userid);
+			mav.addObject("str", userid+"님 환영합니다~!");
+			mav.setViewName("member/loginOk");
+			
+		}else if(result==memberDao.Not_id || result==memberDao.Not_pwd){
+			mav.addObject("str","아이디 또는 비밀번호를 확인해주세요.");
+			mav.addObject("goPage","/login.hy");
+			mav.setViewName("member/memberPopup");
+		}else {
+			mav.addObject("str","고객센터로 문의 바랍니다.");
+			mav.addObject("goPage","/login.hy");
+			mav.setViewName("member/memberPopup");
+		}
+		
+		return mav;
+		
+	}
+	
 }
