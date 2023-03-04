@@ -16,6 +16,9 @@ public class MemberController {
 	@Autowired
 	private MemberDAO memberDao;
 	
+	
+	/**회원가입 관련 메서드*/
+	
 	@RequestMapping(value="/memberJoin.hy", method=RequestMethod.GET)
 	public ModelAndView memberJoinForm() {
 		
@@ -67,6 +70,14 @@ public class MemberController {
 		
 		return mav;
 		
+	}
+	
+	
+	/**로그인 관련 메서드*/
+	
+	@RequestMapping("loginForm.hy")
+	public String loginForm() {
+		return "member/login";
 	}
 	
 }

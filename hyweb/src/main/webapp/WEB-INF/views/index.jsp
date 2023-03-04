@@ -19,11 +19,16 @@ h1{
 	text-align:center;	
 }
 </style>
+<script>
+function loginPopup(){
+	window.open('loginForm.hy','login','width=500px,height=400px');
+}
+</script>
 </head>
 <body>
 <div class="topmenu">
 	<a href="memberJoin.hy">회원가입</a>&nbsp;|&nbsp;
-	<a>로그인</a>
+	<a href="javascript:loginPopup();">로그인</a>
 </div>
 <h1>index.jsp</h1>
 </body>
