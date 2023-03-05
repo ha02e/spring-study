@@ -29,10 +29,7 @@ function idCheck(){
 </script>
 </head>
 <body>
-<div class="topmenu">
-	<a href="memberJoin.hy">회원가입</a>&nbsp;|&nbsp;
-	<a>로그인</a>
-</div>
+
 <h1>index.jsp</h1>
 <form name="memberJoin" action="memberJoin.hy" method="post">
 <table>

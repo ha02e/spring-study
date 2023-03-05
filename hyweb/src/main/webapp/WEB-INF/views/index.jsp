@@ -1,5 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
 <!DOCTYPE html>
 <html>
 <head>
@@ -26,10 +27,18 @@ function loginPopup(){
 </script>
 </head>
 <body>
-<div class="topmenu">
-	<a href="memberJoin.hy">회원가입</a>&nbsp;|&nbsp;
-	<a href="javascript:loginPopup();">로그인</a>
-</div>
+<c:if test="${empty sessionScope.userid}">
+	<div class="topmenu">
+		<a href="memberJoin.hy">회원가입</a>&nbsp;|&nbsp;
+		<a href="javascript:loginPopup();">로그인</a>
+	</div>
+</c:if>
+<c:if test="${! empty sessionScope.userid}">
+	<div class="topmenu">
+		${sessionScope.username}님 로그인중&nbsp;|&nbsp;
+		<a href="logout.hy">로그아웃</a>
+	</div>
+</c:if>
 <h1>index.jsp</h1>
 </body>
 </html>

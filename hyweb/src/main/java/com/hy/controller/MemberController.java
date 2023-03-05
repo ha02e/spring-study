@@ -1,5 +1,8 @@
 package com.hy.controller;
 
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpSession;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -82,7 +85,8 @@ public class MemberController {
 	
 	@RequestMapping(value="login.hy",method = RequestMethod.POST)
 	public ModelAndView loginCheck(@RequestParam("userid")String userid,
-									@RequestParam("userpwd")String userpwd) {
+									@RequestParam("userpwd")String userpwd,
+									HttpSession session) {
 		
 		int result=memberDao.loginCheck(userid, userpwd);
 		
@@ -92,6 +96,10 @@ public class MemberController {
 		if(result==memberDao.Login_ok) {
 			
 			String username=memberDao.getUserInfo(userid);
+			
+			session.setAttribute("userid", userid);
+			session.setAttribute("username", username);
+			
 			mav.addObject("str", userid+"님 환영합니다~!");
 			mav.setViewName("member/loginOk");
 			
@@ -105,6 +113,22 @@ public class MemberController {
 			mav.setViewName("member/memberPopup");
 		}
 		
+		return mav;
+		
+	}
+	
+	
+	/**로그아웃 관련 메서드*/
+	@RequestMapping("logout.hy")
+	public ModelAndView logoutOk(HttpServletRequest req) {
+		
+		HttpSession session=req.getSession();
+		session.invalidate(); //설정된 세션 삭제
+		
+		ModelAndView mav=new ModelAndView();
+		
+		mav.setViewName("redirect:index.hy"); //리다이렉트 방식
+
 		return mav;
 		
 	}
