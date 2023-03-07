@@ -10,7 +10,7 @@ h1{
 	text-align:center;	
 }
 table{
- 	width:320px;
+ 	width:300px;
  	margin:auto;
  	border:1px solid #999999;
  	padding:20px 10px;
@@ -27,10 +27,6 @@ input[type="submit"]{
 	line-height: 28px;
 	margin-top:16px;
 }
-.saveid-box{
-	font-size: 14px;
-	padding:10px 0 0 0;
-}
 </style>
 </head>
 <body>
@@ -39,7 +35,7 @@ input[type="submit"]{
 <table>
 	<tr>
 		<th><label>아이디</label></th>
-		<td><input type="text" name="userid" placeholder="아이디를 입력하세요." value="${cookie.saveid.value}"></td>
+		<td><input type="text" name="userid" placeholder="아이디를 입력하세요."></td>
 	</tr>
 	<tr>
 		<th><label>비밀번호</label></th>
@@ -49,11 +45,6 @@ input[type="submit"]{
 		<td colspan="2" align="center">
 		<input type="submit" value="로 그 인">
 		</td>
-	</tr>	
-	<tr>
-		<td colspan="2" align="center" class="saveid-box">
-		<input type="checkbox" name="saveid" value="on" ${empty cookie.saveid.value?"":"checked"}>아이디 저장
-		</td>	
 	</tr>
 </table>
 </form>
