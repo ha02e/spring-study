@@ -1,6 +1,10 @@
 package com.hy.controller;
 
+import java.util.*;
+
+import javax.servlet.http.Cookie;
 import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -86,7 +90,9 @@ public class MemberController {
 	@RequestMapping(value="login.hy",method = RequestMethod.POST)
 	public ModelAndView loginCheck(@RequestParam("userid")String userid,
 									@RequestParam("userpwd")String userpwd,
-									HttpSession session) {
+									@RequestParam(value="saveid",required = false)String saveid,
+									HttpSession session,
+									HttpServletResponse resp) {
 		
 		int result=memberDao.loginCheck(userid, userpwd);
 		
@@ -99,6 +105,18 @@ public class MemberController {
 			
 			session.setAttribute("userid", userid);
 			session.setAttribute("username", username);
+			
+			//쿠키
+			if(saveid==null) {
+				Cookie ck=new Cookie("saveid",userid);
+				ck.setMaxAge(0);
+				resp.addCookie(ck);
+			}else {
+				Cookie ck=new Cookie("saveid",userid);
+				ck.setMaxAge(60*60*24*30);
+				resp.addCookie(ck);
+			}
+			
 			
 			mav.addObject("str", userid+"님 환영합니다~!");
 			mav.setViewName("member/loginOk");
