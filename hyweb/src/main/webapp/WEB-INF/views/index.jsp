@@ -40,5 +40,8 @@ function loginPopup(){
 	</div>
 </c:if>
 <h1>index.jsp</h1>
+<ul>
+	<li><a href="emp.hy">사원관리 프로그램</a></li>
+</ul>
 </body>
 </html>
