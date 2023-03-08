@@ -1,14 +1,38 @@
 package com.hy.controller;
 
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.servlet.ModelAndView;
+
+import com.hy.student.model.StudentDAO;
+import com.hy.student.model.StudentDTO;
 
 @Controller
 public class StudentController {
+	
+	@Autowired
+	private StudentDAO studentDao;
 
 	@RequestMapping("/student.hy")
 	public String studentPage() {
 		return "student/student";
 	}
+	
+	
+	@RequestMapping("/studentAdd.hy")
+	public ModelAndView studentAdd(StudentDTO dto) {
+		
+		int result=studentDao.studentAdd(dto);
+		String str=result>0?"등록이 완료되었습니다~!":"등록에 실패하였습니다ㅠ";
+		
+		ModelAndView mav=new ModelAndView();
+		mav.addObject("str", str);
+		mav.setViewName("student/studentPopup");
+		
+		return mav;
+		
+	}
+	
 	
 }

@@ -1,11 +1,34 @@
 package com.hy.student.model;
 
+import java.util.*;
+import org.mybatis.spring.SqlSessionTemplate;
+
 public class StudentDAOImple implements StudentDAO {
+
+	private SqlSessionTemplate sqlMap;
+	
+	public StudentDAOImple(SqlSessionTemplate sqlMap) {
+		super();
+		this.sqlMap = sqlMap;
+	}
+	
 
 	@Override
 	public int studentAdd(StudentDTO dto) {
-		// TODO Auto-generated method stub
-		return 0;
+		
+		int total=dto.getKor()+dto.getMat()+dto.getEng();
+		int avg=total/3;
+		
+		Map map=new HashMap();
+		map.put("name",dto.getName());
+		map.put("kor", dto.getKor());
+		map.put("mat", dto.getMat());
+		map.put("eng", dto.getEng());
+		map.put("total",total);
+		map.put("avg", avg);
+		
+		int count=sqlMap.insert("studentAdd",map);
+		return count;
 	}
 
 }

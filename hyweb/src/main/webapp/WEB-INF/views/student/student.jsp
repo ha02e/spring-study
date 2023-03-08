@@ -20,6 +20,12 @@ form{
 	text-align: center;
 	font-size:14px;
 }
+table{
+	margin: 20px auto;
+}
+.btn input{
+	margin:10px 0 0 0;
+}
 .paging{
 	width:600px;
 	margin:auto;
@@ -36,27 +42,27 @@ form{
 </fieldset>
 </form>
 
-<form name="studentAdd">
+<form name="studentAdd" action="studentAdd.hy" method="post">
 <fieldset>
 	<legend>학생 성적 등록하기</legend>
 		<table>
 		<tr>
-			<th>학생 이름</th>
+			<th>학생 이름 : </th>
 			<td><input type="text" name="name"></td>
 		</tr>
 		<tr>
-			<th>국어 성적</th>
+			<th>국어 성적 : </th>
 			<td><input type="text" name="kor"></td>
 		</tr>
 		<tr>
-			<th>수학 성적</th>
+			<th>수학 성적 : </th>
 			<td><input type="text" name="mat"></td>
 		</tr>
 		<tr>
-			<th>영어 성적</th>
+			<th>영어 성적 : </th>
 			<td><input type="text" name="eng"></td>
 		</tr>
-		<tr>
+		<tr class="btn">
 			<td colspan="2" align="center">
 				<input type="submit" value="성적등록">
 				<input type="reset" value="다시작성">
