@@ -10,7 +10,7 @@
 	<!-- Controller  -->
 	<bean id="indexController" class="com.hy.controller.IndexController"></bean>
 	<bean id="memberController" class="com.hy.controller.MemberController"></bean>
-	<bean id="empController" class="com.hy.controller.EmpController"></bean>
+	<bean id="studentController" class="com.hy.controller.StudentController"></bean>
 
 	<!-- DAO -->
 	<bean id="memberDao" class="com.hy.member.model.MemberDAOImple"></bean>
