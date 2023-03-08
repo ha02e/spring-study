@@ -41,7 +41,6 @@ function loginPopup(){
 </c:if>
 <h1>index.jsp</h1>
 <ul>
-	<li><a href="emp.hy">사원관리 프로그램</a></li>
 	<li><a href="student.hy">학생 성적관리 프로그램</a></li>
 </ul>
 </body>
