@@ -30,5 +30,11 @@ public class StudentDAOImple implements StudentDAO {
 		int count=sqlMap.insert("studentAdd",map);
 		return count;
 	}
+	
+	@Override
+	public List<StudentDTO> studentList() {
+		List<StudentDTO> lists=sqlMap.selectList("studentList");
+		return lists;
+	}
 
 }

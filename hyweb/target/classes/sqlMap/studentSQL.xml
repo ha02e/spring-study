@@ -14,4 +14,9 @@
 				#{total},
 				#{avg})
 	</insert>
+	<select id="studentList" resultType="com.hy.student.model.StudentDTO">
+		select * from
+			hy_student
+		order by idx desc
+	</select>
 </mapper>

@@ -38,7 +38,7 @@ table{
 <form name="studentList">
 <fieldset>
 	<legend>학생 목록보기</legend>
-	<h3><a href="studentList.do">모든 학생 내역보기</a></h3>
+	<h3><a href="studentList.hy">모든 학생 내역보기</a></h3>
 </fieldset>
 </form>
 
