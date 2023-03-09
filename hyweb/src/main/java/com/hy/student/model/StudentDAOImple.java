@@ -36,5 +36,11 @@ public class StudentDAOImple implements StudentDAO {
 		List<StudentDTO> lists=sqlMap.selectList("studentList");
 		return lists;
 	}
+	
+	@Override
+	public List<StudentDTO> sutdentUpSearch(int idx) {
+		List<StudentDTO> lists=sqlMap.selectList("studentUpSearch", idx);
+		return lists;
+	}
 
 }

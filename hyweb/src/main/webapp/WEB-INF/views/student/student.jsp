@@ -71,5 +71,18 @@ table{
 	</table>
 </fieldset>
 </form>
+
+<form name="studentUpdateForm" action="studentUpdateForm.hy" method="post">
+<fieldset>
+<legend>학생 성적 수정하기</legend>
+<table>
+	<tr>
+		<th>학생번호</th>
+		<td><input type="text" name="idx"></td>
+		<td><input type="submit" value="성적수정"></td>
+	</tr>
+</table>
+</fieldset>
+</form>
 </body>
 </html>

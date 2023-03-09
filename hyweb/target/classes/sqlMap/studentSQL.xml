@@ -19,4 +19,9 @@
 			hy_student
 		order by idx desc
 	</select>
+	<select id="studentUpSearch" parameterType="Integer" resultType="com.hy.student.model.StudentDTO">
+		select * from
+			hy_student
+		where idx=#{idx}
+	</select>
 </mapper>
