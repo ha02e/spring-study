@@ -38,9 +38,28 @@ public class StudentDAOImple implements StudentDAO {
 	}
 	
 	@Override
-	public List<StudentDTO> sutdentUpSearch(int idx) {
-		List<StudentDTO> lists=sqlMap.selectList("studentUpSearch", idx);
-		return lists;
+	public StudentDTO sutdentUpSearch(int idx) {
+		StudentDTO list=sqlMap.selectOne("studentUpSearch", idx);
+		return list;
+	}
+	
+	@Override
+	public int studentUpdate(StudentDTO dto) {
+		
+		int total=dto.getKor()+dto.getMat()+dto.getEng();
+		int avg=total/3;
+		
+		Map map=new HashMap();
+		map.put("idx", dto.getIdx());
+		map.put("name", dto.getName());
+		map.put("kor", dto.getKor());
+		map.put("mat", dto.getMat());
+		map.put("eng", dto.getEng());
+		map.put("total",total);
+		map.put("avg", avg);
+		
+		int count=sqlMap.update("studentUpdate", map);
+		return count;
 	}
 
 }

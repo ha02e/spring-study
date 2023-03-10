@@ -2,5 +2,5 @@
     pageEncoding="UTF-8"%>
 <script>
 window.alert('${str}');
-location.href='student.hy';
+location.href='${goPage}';
 </script>

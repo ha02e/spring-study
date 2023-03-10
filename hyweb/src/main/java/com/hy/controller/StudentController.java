@@ -31,6 +31,7 @@ public class StudentController {
 		
 		ModelAndView mav=new ModelAndView();
 		mav.addObject("str", str);
+		mav.addObject("goPage", "student.hy");
 		mav.setViewName("student/studentPopup");
 		
 		return mav;
@@ -53,16 +54,30 @@ public class StudentController {
 	@RequestMapping("/studentUpdateForm.hy")
 	public ModelAndView studentUpdateForm(@RequestParam("idx")int idx) {
 		
-		List<StudentDTO> lists=studentDao.sutdentUpSearch(idx);
+		StudentDTO list=studentDao.sutdentUpSearch(idx);
 		
 		ModelAndView mav=new ModelAndView();
-		mav.addObject("lists", lists);
+		mav.addObject("list", list);
 		mav.setViewName("student/studentUpdate");
 		
 		return mav;
 		
 	}
 	
+	@RequestMapping("/studentUpdate.hy")
+	public ModelAndView studentUpdate(StudentDTO dto) {
+		
+		int result=studentDao.studentUpdate(dto);
+		String str=result>0?"학생 성적 수정이 완료되었습니다~!":"학생 성적 수정에 실패하였습니다ㅠ";
+		
+		ModelAndView mav=new ModelAndView();
+		mav.addObject("str", str);
+		mav.addObject("goPage", "student.hy");
+		mav.setViewName("student/studentPopup");
+		
+		return mav;
+		
+	}
 	
 	
 }

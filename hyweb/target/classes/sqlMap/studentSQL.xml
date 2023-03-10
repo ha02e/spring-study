@@ -24,4 +24,10 @@
 			hy_student
 		where idx=#{idx}
 	</select>
+	<update id="studentUpdate" parameterType="map">
+		update hy_student
+		set kor=#{kor}, mat=#{mat}, eng=#{eng},
+			total=#{total}, avg=#{avg}
+		where idx=#{idx}
+	</update>
 </mapper>
