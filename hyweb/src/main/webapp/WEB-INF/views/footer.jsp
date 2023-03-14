@@ -26,20 +26,13 @@
 			</div>
 	 		<div class="col-lg-3 col-md-6">
 				<h4 class="text-white mb-4">Quick Links</h4>
-				<a class="btn btn-link" href="">About Us</a>
-				<a class="btn btn-link" href="">Contact Us</a>
-				<a class="btn btn-link" href="">Our Services</a>
-				<a class="btn btn-link" href="">Terms & Condition</a>
-				<a class="btn btn-link" href="">Support</a>
+				<a class="btn btn-link" href="">About Me</a>
+				<a class="btn btn-link" href="">Resume</a>
+				<a class="btn btn-link" href="">Projects</a>
+				<a class="btn btn-link" href="">Study</a>
 			</div>
 			<div class="col-lg-3 col-md-6">
-				<h4 class="text-white mb-4">Business Hours</h4>
-				<p class="mb-1">Monday - Friday</p>
-				<h6 class="text-light">09:00 am - 07:00 pm</h6>
-				<p class="mb-1">Saturday</p>
-				<h6 class="text-light">09:00 am - 12:00 pm</h6>
-				<p class="mb-1">Sunday</p>
-				<h6 class="text-light">Closed</h6>
+				
 			</div>
 			<div class="col-lg-3 col-md-6">
 				<h4 class="text-white mb-4">Newsletter</h4>
@@ -61,11 +54,7 @@
 			<div class="col-md-6 text-center text-md-start mb-3 mb-md-0">
 				&copy; <a class="fw-medium text-light" href="#">Your Site Name</a>, All Right Reserved.
 			</div>
-			<div class="col-md-6 text-center text-md-end">
-			<!--/*** This template is free as long as you keep the footer author’s credit link/attribution link/backlink. If you'd like to use the template without the footer author’s credit link/attribution link/backlink, you can purchase the Credit Removal License from "https://htmlcodex.com/credit-removal". Thank you for your support. ***/-->
-			Designed By <a class="fw-medium text-light" href="https://htmlcodex.com">HTML Codex</a>
-			Distributed By <a class="fw-medium text-light" href="https://themewagon.com">ThemeWagon</a>
-			</div>
+			
 		</div>
 	</div>
 </div>
