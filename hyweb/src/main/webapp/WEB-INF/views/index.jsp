@@ -15,6 +15,12 @@
 function loginPopup(){
 	window.open('loginForm.hy','login','width=500px,height=400px');
 }
+
+function show(){
+	var pTag=document.all.ptag;
+	pTag.innerHTML='<h3 style="color:blue;">안녕하세요, 반갑습니다~!!</h3>'
+	
+}
 </script>
 </head>
 <body>
@@ -32,6 +38,10 @@ function loginPopup(){
 			<a class="nav-link" href="logout.hy">로그아웃</a>
 	</div>
 </c:if>
+
+
+<input type="button" value="click!" onclick="show()">
+<p id="ptag">▲ Click!!</p>
 
 <%@include file="/WEB-INF/views/footer.jsp"%> 
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-kenU1KFdBIe4zVF0s0G1M5b4hcpxyD9F7jL+jjXkk+Q2h455rYXK/7HAuoJl+0I4" crossorigin="anonymous"></script>
