@@ -47,7 +47,8 @@ button#submit{
 		<input type="text" class="form-control form-control-lg" placeholder="제목">
 	</div>
 	<textarea name="review_form" id="editor"></textarea>
-	<button id="submit">작성하기</button>	
+	
+	<button type="button" class="btn btn-outline-primary mb-2" id="submit">작성하기</button>	
 </div>
 
 <script>
