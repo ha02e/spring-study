@@ -35,6 +35,7 @@
 	<bean id="indexController" class="com.hy.controller.IndexController"></bean>
 	<bean id="memberController" class="com.hy.controller.MemberController"></bean>
 	<bean id="studentController" class="com.hy.controller.StudentController"></bean>
+	<bean id="reviewController" class="com.hy.controller.ReviewController"></bean>
 
 	<!-- DAO -->
 	<bean id="memberDao" class="com.hy.member.model.MemberDAOImple"></bean>
